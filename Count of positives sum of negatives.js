@@ -19,13 +19,53 @@
 
 
 
-function countPositivesSumNegatives(input) {
-    let posArr = []
-    let negArr = []
+// function countPositivesSumNegatives(input) {
+//     let posArr = []
+//     let negArr = []
 
-    posArr = input.filter((e) => {
-        return e > 0
-    })
-   // two ways to write the arrow function.
-    negArr = input.filter((e) => e < 0)
+//     posArr = input.filter((e) => {
+//         return e > 0
+//     })
+//    // two ways to write the arrow function.
+//     negArr = input.filter((e) => e < 0)
+
+//     console.log(posArr)
+//     console.log(negArr)
+    
+//     let posVar = posArr.length
+//     console.log(posVar)
+
+//     let negVar = negArr.reduce((sum, e) => sum + e, 0)
+//     console.log(negVar)
+
+//     return [posVar, negVar]    
+// }
+
+//////////// sexier version:
+
+// function countPositivesSumNegatives(input) {
+//     let posArr = input.filter((e) => e > 0)
+//     let negArr = input.filter((e) => e < 0)
+//     return [posArr.length, negArr.reduce((sum, e) => sum + e, 0)]    
+// }
+
+function countPositivesSumNegatives(input) {
+    let ans = []
+    if (input === null){
+        ans = []
+    } else if(input.length > 0) {
+        let posArr = input.filter((e) => e > 0)
+        let negArr = input.filter((e) => e < 0)
+        ans = [posArr.length, negArr.reduce((sum, e) => sum + e, 0)]    
+    }
+    return ans
 }
+
+console.log(countPositivesSumNegatives([2, -3, 5, 8, -1, 0]))
+
+
+// Best Practices Version:
+
+//function countPositivesSumNegatives(input) {
+//    return input && input.length ? [input.filter(p => p > 0).length, input.filter(n => n < 0).reduce((a, b) => a + b, 0)] : [];
+//}
