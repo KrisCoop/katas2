@@ -10,11 +10,13 @@
 // then I will just sum and return the results of each array with the reduce thingy.
 
 function arrayPlusArray(arr1, arr2) {
-    
-    let sum1 = arr1.reduce((tot, e, i) => tot += e ,0)
-    let sum2 = arr2.reduce((tot, e, i) => tot += e ,0)
-    let ans = sum1 + sum2
-    return ans
+
+    return arr1.reduce((tot, e, i) => tot += e ,0) + arr2.reduce((tot, e, i) => tot += e ,0)
+
+    // let sum1 = arr1.reduce((tot, e, i) => tot += e ,0)
+    // let sum2 = arr2.reduce((tot, e, i) => tot += e ,0)
+    // let ans = sum1 + sum2
+    // return ans
   }
 
 
