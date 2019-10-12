@@ -2,7 +2,7 @@
 // You need to establish the section index (starting at 0) you are at, given the scrollY and sizes of all sections.
 // Sections start with 0, so if first section is 200 high, it takes 0-199 "pixels" and second starts at 200.
 
-// Example:
+// Example:...
 // getSectionIdFromScroll( 300, [300,200,400,600,100] )
 
 // will output number 1 as it's the second section.
