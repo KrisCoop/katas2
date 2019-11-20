@@ -9,7 +9,17 @@ function take(arr, n) {
     // loop through the array with a standard for loop,
     // only loop to n.length
 
-    
+    // let newArr = []
+    // for (i = 0; i < n; i++){
+    //     newArr.push(arr[i]) 
+    // }
+    // return newArr
+
+     // or...just do this shit:
+     
+    return arr.slice(0, n)
+
+
     
     // push each element (up to n) into a new array
 
