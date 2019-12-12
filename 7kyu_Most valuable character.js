@@ -13,12 +13,40 @@
 function solve(st) {
     //use split('').....maybe, we might not need to split it at all
     //to find the first index of a letter, use indexOf()
-    //to find the last index, use lastIndexOf
+    //to find the last index, use lastIndexOf()
+    //make a variable called highestLetter
+    //make a variable called highestValue
+    //as we loop through the array, if the current letters' value is greater 
+    //than the current value, make it the new highestLetter
+    //after the loop runs, return highestLetter
+    // let highestLetter = '';
+    let highestValue = -1 ;
+    let winners = [];
+    st.split('').forEach((e, i, arr) => {
+        if ((arr.lastIndexOf(e) - arr.indexOf(e)) > highestValue){
+            highestValue = (arr.lastIndexOf(e) - arr.indexOf(e))
+            // highestLetter = e;
+            console.log(highestValue)
+            console.log(highestLetter)
+        }
+    })
 
+    st.split('').forEach((e, i, arr) => {
+        if((arr.lastIndexOf(e) - arr.indexOf(e)) === highestValue){
+            winners.push(e)
+            console.log(winners)
+        }
+    })
+
+    winners = winners.sort()
+    console.log(winners)
+
+    return winners[0]
  }
 
-console.log(solve('a'), 'a');
+// console.log(solve('a'), 'a');
 // console.log(solve('aa'), 'a');
 // console.log(solve('bcd'), 'b');
 // console.log(solve('axyzxyz'), 'x');
+console.log(solve('ayxzyxz'))
 // console.log(solve('aabccc'), 'c'); 
