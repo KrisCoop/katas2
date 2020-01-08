@@ -19,12 +19,15 @@ function calculateTip(amount, rating) {
     let tip = 0
 
     if (rating.toLowerCase() === 'terrible'){tip = 0}
-    else if
-
+    else if (rating.toLowerCase() === 'poor'){tip = Math.ceil(amount * .05)}
+    else if (rating.toLowerCase() === 'good'){tip = Math.ceil(amount * .10)}
+    else if (rating.toLowerCase() === 'great'){tip = Math.ceil(amount * .15)}
+    else if (rating.toLowerCase() === 'excellent'){tip = Math.ceil(amount * .20)}
+    else tip = 'Rating not recognised'
 
     return tip
 
 }
 
 console.log(calculateTip(20, "Excellent"), 4);
-// console.log(calculateTip(26.95, "good"), 3);
+console.log(calculateTip(26.95, "good"), 3);
