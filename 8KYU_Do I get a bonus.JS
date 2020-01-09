@@ -8,7 +8,7 @@
 // "$" (C#, C++, Ruby, Clojure, Elixir, PHP and Python, Haskell, Lua) or "¥" (Rust).
 
 function bonusTime(salary, bonus) {
-    // your code here
+    return bonus === true? "£" + salary * 10 : "£" + salary
     }
 
 Console.log(bonusTime(10000, true), '£100000');
