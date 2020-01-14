@@ -6,7 +6,7 @@
 // The input values are always positive.
 
 const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
-    // TODO
+    return mpg * fuelLeft >= distanceToPump;
   };
 
 
