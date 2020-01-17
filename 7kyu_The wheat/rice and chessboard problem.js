@@ -16,3 +16,28 @@
 // Input is always going to be valid/reasonable: ie: a non negative number; extra cookie for 
 // not using a loop to compute square-by-square (at least not directly) and instead trying a 
 // smarter approach [hint: some peculiar operator]; a trick converting the number might also work: impress me!
+
+function squaresNeeded(grains){
+
+    let squares = [1]
+    let acc = 1;
+    for (i = 1; i < 65; i++){
+        acc *= 2
+        squares.push(acc)
+    }
+
+    let ans = 0;
+    for (i = 0; i < squares.length; i++){
+        if (grains >= squares[i]){
+            ans = i+1;
+        }
+    }
+
+    return ans
+}
+
+console.log(squaresNeeded(0), 0);
+console.log(squaresNeeded(1), 1);
+console.log(squaresNeeded(2), 2);
+console.log(squaresNeeded(3), 2);
+console.log(squaresNeeded(4), 3);
