@@ -17,10 +17,13 @@
 
 
 function points(games) {
-    console.log(games)
-    
-  }
 
-
-
-console.log(points(["1:0","2:0","3:0","4:4","2:2","3:3","1:4","2:3","2:4","3:4"]) , 12)
+    const points = games => 
+      games.reduce((total, result) => {
+        const [x,y] = result.split(':').map(Number)
+        if (x < y) return total + 3
+        if (x > y) return total
+        if (x == y) return total + 1
+      }, 0)
+        
+    }
